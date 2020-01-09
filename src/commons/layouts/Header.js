@@ -42,7 +42,7 @@ export const Header = props => {
     const toggleNavbar = () => {
         setNavbarDisplay(!navbarDisplay)
     }
-    return (        
+    return (      
         <Grid container spacing={0}>
             <header className={`header ${navbarDisplay? 'show-nav-bar' : ''} dark-background`}>
                 <span>
@@ -59,6 +59,6 @@ export const Header = props => {
                     </div>                    
                 </div>
             </header>
-        </Grid>        
+        </Grid>       
     )
 }
