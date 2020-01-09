@@ -1,55 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from "@material-ui/core/Grid";
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Navbar } from './Navbar';
 import './header.scss';
 
 export const Header = props => {
+
     const navbarList = [
         {
             id: 1,
-            name: 'Home'
+            name: 'Home',
+            link: '#',
         },
         {
             id: 2,
-            name: 'Order'
+            name: 'Order',
+            link: '#',
         },
         {
             id: 3,
-            name: 'Warehouse'
+            name: 'Warehouse',
+            link: '#',
         },
         {
             id: 4,
-            name: 'Customer'
+            name: 'Customer',
+            link: '#',
         },
         {
             id: 5,
-            name: 'System'
+            name: 'System',
+            link: '#',
         },
         {
             id: 6,
-            name: 'Notification'
+            name: 'Notification',
+            link: '#',
         },
         
     ];
+    const [ navbarDisplay, setNavbarDisplay ] = useState(false);
+    const toggleNavbar = () => {
+        setNavbarDisplay(!navbarDisplay)
+    }
     return (        
         <Grid container spacing={0}>
-            <header className='header dark-background'>
-                <Grid item xs={12}>
-                    <span>
-                        logo
-                    </span>
-                </Grid>
-                <Grid item xs={12}>
-                    <div className='navbar-user'>
-                        <Navbar 
-                            navbarList={navbarList}
-                        />
-                        <span>
-                            <LocationOnIcon color="secondary" />
-                        </span>
-                    </div>
-                </Grid>
+            <header className={`header ${navbarDisplay? 'show-nav-bar' : ''} dark-background`}>
+                <span>
+                    logo
+                </span>
+                <div className='navbar-user'>
+                    <Navbar
+                        toggleNavbar={toggleNavbar}
+                        navbarDisplay={navbarDisplay}
+                        navbarList={navbarList}
+                    />
+                    <div className='profile'>
+                        ABC
+                    </div>                    
+                </div>
             </header>
         </Grid>        
     )

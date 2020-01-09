@@ -1,12 +1,15 @@
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    color: blue;
+    color: #fff;
     .navbar-user {
         display: flex;
     }
 }
 
-.dark-background {
-    background-color: #313131;
+@media screen and (max-width: 700px) {
+    .header.show-nav-bar {
+        margin-bottom: 190px;
+    }
 }

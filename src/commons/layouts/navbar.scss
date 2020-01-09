@@ -1,16 +1,43 @@
 .navbar {
-    .list-navbar {
-        margin: 0;
-        display: flex;
-        padding: 0;
-        li {
-            cursor: pointer;
-            list-style-type: none;
-            padding-left: 20px;
-            &:hover, &:active {
-                font-weight: 600;
-                text-decoration: underline;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    a {
+        color: inherit;
+        text-decoration: none;
+        padding-left: 20px;
+        padding: 5px 10px;
+        &:hover, &:active {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    }
+}
+.expand-nav {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        display: none;
+        &.show-navbar-mobile {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 22px;
+            right: 0;
+            z-index: 30;
+            background-color: #313131;
+            a {
+                display: block;
             }
         }
+    }
+    .expand-nav {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
     }
 }
