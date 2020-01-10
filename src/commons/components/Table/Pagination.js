@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer-table.scss';
 
-export const FooterTable = props => {
+export const Pagination = props => {
     const visiblePages = [1,2,3,12];
     return (
         <div className='footer-table'>

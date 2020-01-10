@@ -8,7 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { FooterTable } from './FooterTable';
+import { Pagination } from './Pagination';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -47,6 +47,7 @@ export default function CustomizedTables() {
   const classes = useStyles();
 
   return (
+    <>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
@@ -72,9 +73,10 @@ export default function CustomizedTables() {
           ))}
         </TableBody>
         <TableFooter>
-            <FooterTable />
+          <Pagination />
         </TableFooter>
-      </Table>
+      </Table>      
     </TableContainer>
+    </>
   );
 }
