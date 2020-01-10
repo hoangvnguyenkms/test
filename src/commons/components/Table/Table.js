@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
+import TableFooter from '@material-ui/core/TableFooter';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
@@ -39,8 +40,6 @@ const rows = [
 ];
 
 const useStyles = makeStyles({
-  table: {
-  },
 });
 
 export default function CustomizedTables() {
@@ -71,6 +70,9 @@ export default function CustomizedTables() {
             </StyledTableRow>
           ))}
         </TableBody>
+        <TableFooter>
+            HiHIHIHI
+        </TableFooter>
       </Table>
     </TableContainer>
   );

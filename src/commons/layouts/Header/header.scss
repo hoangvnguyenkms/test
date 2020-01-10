@@ -1,0 +1,32 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    position: relative;
+    .navbar-user {
+        display: flex;
+        align-items: center;
+    }
+    .logo {
+        width: 50px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header.show-nav-bar {
+        margin-bottom: 190px;
+    }
+    .header {
+        .navbar-user {
+            display: flex;
+            align-items: flex-start;
+        }
+        .logo {
+            width: 30px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

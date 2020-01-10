@@ -5,7 +5,7 @@ import './footer.scss';
 
 export const Footer = props => {
     return (        
-        <Grid xs={12}>
+        <Grid container spacing={0}>
             <footer className='footer'>
                 <div className=''>
                     <span className=''>

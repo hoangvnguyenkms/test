@@ -6,44 +6,47 @@ export const SideBar = props => {
     const sidebarList = [
         {
             id: 1,
-            name: 'Home',
+            name: 'Confirm',
             link: '#',
         },
         {
             id: 2,
-            name: 'Order',
+            name: 'Process',
             link: '#',
         },
         {
             id: 3,
-            name: 'Warehouse',
+            name: 'Waiting',
             link: '#',
         },
         {
             id: 4,
-            name: 'Customer',
+            name: 'Payment',
             link: '#',
         },
         {
             id: 5,
-            name: 'System',
+            name: 'Success',
             link: '#',
-        },
-        {
-            id: 6,
-            name: 'Notification',
-            link: '#',
-        },
-        
+        },        
     ];
     
+    const [ idActive, setIdActive ] = useState(null);
+    const activeItem = (id) => {
+        setIdActive(id)
+    }
     return (
         <div className={'sidebar'}>
-            {sidebarList.map( navbar => (
-                <a href={navbar.link} key={navbar.id}>
-                    {navbar.name}
-                </a>
-            ))}            
+            <div className={'sidebar-list'}>
+                {sidebarList.map( navbar => (
+                    <a href={navbar.link} 
+                        key={navbar.id}
+                        className={ idActive === navbar.id ? 'item active' : 'item'}
+                        onClick={() => activeItem(navbar.id)}>
+                        {navbar.name && navbar.name.toUpperCase()}
+                    </a>
+                ))}  
+            </div>                      
         </div>
     )
 }

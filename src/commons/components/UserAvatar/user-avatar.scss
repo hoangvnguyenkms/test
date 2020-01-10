@@ -1,0 +1,32 @@
+.profile {
+    cursor: pointer;
+    display: flex;
+    background: #444;
+    margin: 5px;
+    padding: 5px;
+    .avatar {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #000;
+        border-radius: 50%;
+    }
+    .username {
+        padding-left: 4px;
+        line-height: 1.8;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .profile {
+        margin: 5px;
+        padding: 5px;
+        .avatar {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

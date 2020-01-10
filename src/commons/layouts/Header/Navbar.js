@@ -4,13 +4,19 @@ import './navbar.scss';
 
 export const Navbar = props => {
     const { navbarList = [], navbarDisplay, toggleNavbar } = props;
-    
+    const [ idActive, setIdActive ] = useState(null);
+    const activeItem = (id) => {
+        setIdActive(id)
+    }
     return (
         <div>
             <div className={`navbar ${navbarDisplay ? 'show-navbar-mobile' : ''}`}>
                 {navbarList.map( navbar => (
-                    <a href={navbar.link} key={navbar.id}>
-                        {navbar.name}
+                    <a href={navbar.link} 
+                        key={navbar.id} 
+                        className={ idActive === navbar.id ? 'item active' : 'item'}
+                        onClick={() => activeItem(navbar.id)}>
+                        {navbar.name && navbar.name.toUpperCase()}
                     </a>
                 ))}            
             </div>
