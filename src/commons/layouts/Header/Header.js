@@ -4,7 +4,7 @@ import { Navbar } from './Navbar';
 import { Title } from './Title';
 import { Breadcrumbs } from './Breadcrumbs';
 import { UserAvatar } from '../../components/UserAvatar/UserAvatar';
-import './header.scss';
+import './styles/header.scss';
 
 export const Header = props => {
 
@@ -48,18 +48,19 @@ export const Header = props => {
     return (  
         <header>    
             <Grid container spacing={0}>
-                <div className={`header ${navbarDisplay? 'show-nav-bar' : ''} dark-background`}>
+                <div className={`header container-padding-left ${navbarDisplay? 'show-nav-bar' : ''} black-background`}>
                     <div className='logo'>
-                        <img src='/logo512.png' width='100%' height='auto' alt='logo'/>
+                        <img src='/logo.png' width='100%' height='auto' alt='logo'/>
                     </div>
-                    <div className='navbar-user'>
+                    <div className='navbar-user black-background'>
                         <Navbar
                             toggleNavbar={toggleNavbar}
                             navbarDisplay={navbarDisplay}
                             navbarList={navbarList}
                         />
                         <UserAvatar
-                            username='Hoang12'
+                            username='Kanlee'
+                            srcImg='/avatar.jpg'
                         />                 
                     </div>
                 </div>            

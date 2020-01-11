@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Dehaze from '@material-ui/icons/Dehaze';
-import './navbar.scss';
+import './styles/navbar.scss';
 
 export const Navbar = props => {
     const { navbarList = [], navbarDisplay, toggleNavbar } = props;
-    const [ idActive, setIdActive ] = useState(null);
+    const [ idActive, setIdActive ] = useState( navbarList[1] ? navbarList[1].id : null );
     const activeItem = (id) => {
         setIdActive(id)
     }

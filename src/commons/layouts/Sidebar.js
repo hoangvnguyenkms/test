@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Dehaze from '@material-ui/icons/Dehaze';
-import './sidebar.scss';
+import './styles/sidebar.scss';
 
 export const SideBar = props => {
     const sidebarList = [
@@ -31,7 +31,7 @@ export const SideBar = props => {
         },        
     ];
     
-    const [ idActive, setIdActive ] = useState(null);
+    const [ idActive, setIdActive ] = useState( sidebarList[0] ? sidebarList[0].id : null );
     const activeItem = (id) => {
         setIdActive(id)
     }
@@ -41,7 +41,7 @@ export const SideBar = props => {
                 {sidebarList.map( navbar => (
                     <a href={navbar.link} 
                         key={navbar.id}
-                        className={ idActive === navbar.id ? 'item active' : 'item'}
+                        className={ idActive === navbar.id ? 'text-bold active' : 'text-bold'}
                         onClick={() => activeItem(navbar.id)}>
                         {navbar.name && navbar.name.toUpperCase()}
                     </a>

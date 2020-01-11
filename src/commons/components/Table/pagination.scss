@@ -1,0 +1,33 @@
+
+.footer-table-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 13px;
+    .count-order {
+        color: #939393;
+    }
+    .table-page-button {
+        line-height: 1.6;
+        min-width: 30px;
+        height: 35px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 5px 5px;
+        margin-left: 5px;
+        &:hover, &:active {
+            color: #fff;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        &.active {
+            color: #fff;
+            background-color: #000;
+            border-radius: 50%;
+        }
+    }
+}

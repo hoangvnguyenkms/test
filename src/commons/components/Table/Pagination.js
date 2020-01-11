@@ -1,31 +1,40 @@
-import React from 'react';
-import './footer-table.scss';
+import React, { useState } from 'react';
+import './pagination.scss';
 
 export const Pagination = props => {
+    const { countOrder } = props;
     const visiblePages = [1,2,3,12];
+    const [ idActive, setIdActive ] = useState(visiblePages[0]);
+    const activeItem = (id) => {
+        setIdActive(id)
+    }
+    const renderButtonPage = (page) => (
+        <button key={page} 
+            className={idActive === page ? 'table-page-button active' : 'table-page-button' }
+            onClick={() => activeItem(page)}
+            >
+            {isNaN(page) ? page : ('0' + page).slice(-2)}
+        </button>
+    )
     return (
-        <div className='footer-table'>
+        <div className='footer-table-wrapper'>
             <div className='count-order'>
-                You have
+                You have: {countOrder} order
             </div>
             <div className='pagination'>
-            {visiblePages.map((page, index, array) => {                
-                if(array[index - 1] + 1 < page){
-                    return (
-                        <>
-                            {' ... '}
-                            <button key={page} className='table-page-button'>
-                                {page}
-                            </button>
-                        </>
-                    );
-                };
-                return (
-                    <button key={page} className='table-page-button'>
-                        {page}
-                    </button>
-                );
-            })}
+                {renderButtonPage('First')}
+                {visiblePages.map((page, index, array) => {                
+                    if(array[index - 1] + 1 < page){
+                        return (
+                            <>
+                                {' ... '}
+                                {renderButtonPage(page)}
+                            </>
+                        );
+                    };
+                    return renderButtonPage(page);
+                })}
+                {renderButtonPage('Last')}
             </div>
         </div>
     )

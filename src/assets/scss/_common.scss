@@ -13,8 +13,10 @@ body {
 
 body, html {
     margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
+    font-size: 14px;
 }
 
 .display-none {
@@ -23,4 +25,68 @@ body, html {
 
 .dark-background {
     background-color: #313131;
+}
+
+.black-background {
+    background-color: #000;
+}
+
+.text-bold {
+    font-weight: 550;
+}
+
+.text-green {
+    color: green;
+}
+
+.margin-top30 {
+    margin-top: 30px;
+}
+
+.margin-left20 {
+    margin-left: 20px;
+}
+
+.gray-background {
+    background-color: #e3e3e3;
+}
+
+.mr20percents {
+    margin-right: 20%;
+}
+
+.container-padding-left {
+    padding-left: 20%;
+}
+@media screen and (max-width: 1100px) {
+    .container-padding-left {
+        padding-left: 10%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .container-padding-left {
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .container-padding-left {
+        padding-left: 100px;
+    }
+}
+
+.container-margin-left {
+    margin-left: 20%;
+}
+@media screen and (max-width: 1100px) {
+    .container-margin-left {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .container-margin-left {
+        margin-left: 50px;
+    }
 }

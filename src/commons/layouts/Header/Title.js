@@ -1,5 +1,5 @@
 import React from 'react';
-import './title.scss';
+import './styles/title.scss';
 
 export const Title = props => {
     const { title, description } = props;

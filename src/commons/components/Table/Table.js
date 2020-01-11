@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Pagination } from './Pagination';
+import './table.scss';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -22,61 +23,47 @@ const StyledTableCell = withStyles(theme => ({
 
 const StyledTableRow = withStyles(theme => ({
   root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
-    },
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-const useStyles = makeStyles({
-});
-
-export default function CustomizedTables() {
-  const classes = useStyles();
+export const CustomizedTables = (props) => {
+  const { data, columns } = props;
 
   return (
-    <>
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell align="center">Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="center">Calories</StyledTableCell>
-            <StyledTableCell align="center">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="center">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="center">Protein&nbsp;(g)</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell align="center" component="th" scope="row">
-                <div style={{color: 'red'}}> {row.name} {row.calories} </div>
-              </StyledTableCell>
-              <StyledTableCell align="center">{row.calories}</StyledTableCell>
-              <StyledTableCell align="center">{row.fat}</StyledTableCell>
-              <StyledTableCell align="center">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="center">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-        <TableFooter>
-          <Pagination />
-        </TableFooter>
-      </Table>      
-    </TableContainer>
-    </>
+    <div className='table-wrapper'>
+      <TableContainer className='table-container' component={Paper}>
+        <Table aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              {columns.map( item => (
+                <StyledTableCell key={item.id} 
+                  align={item.align}
+                  className='table-header text-bold'> 
+                    {item.name} 
+                  </StyledTableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.map(row => (
+              <StyledTableRow key={row.name}>
+                <StyledTableCell align="left" component="th" scope="row">
+                  <div className='name text-bold'> {row.name} </div>
+                  <div className='level'> {row.level} </div>
+                </StyledTableCell>
+                <StyledTableCell align="center">{row.quantity}</StyledTableCell>
+                <StyledTableCell align="center">{row.dateOrder}</StyledTableCell>
+                <StyledTableCell align="center">{row.orderId}</StyledTableCell>
+                <StyledTableCell align="center" className='text-bold' >{row.total}</StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>        
+        </Table>
+        <div className='pagination-table'>
+            <Pagination countOrder={120} />
+        </div>
+      </TableContainer> 
+    </div>
   );
 }
