@@ -7,12 +7,32 @@
     justify-content: space-around;
 
     .contact {
+        display: flex;
+        justify-content: center;
         width: 100%;
         border-bottom: 0.5px solid #939393;
         text-align: center;
         padding: 30px 0 10px 0;
+        .contact-item {
+            display: flex;
+            padding-right: 10px;
+        }
     }
     .name-company {
         padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .footer {    
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+        }
+
     }
 }

@@ -1,8 +1,7 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import TableFooter from '@material-ui/core/TableFooter';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
@@ -61,7 +60,7 @@ export const CustomizedTables = (props) => {
           </TableBody>        
         </Table>
         <div className='pagination-table'>
-            <Pagination countOrder={120} />
+            <Pagination countOrder={1200} />
         </div>
       </TableContainer> 
     </div>

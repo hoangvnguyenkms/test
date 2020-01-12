@@ -1,16 +1,16 @@
 .profile {
     cursor: pointer;
     display: flex;
-    background: #444;
+    background: #242424;
     margin: 5px;
     padding: 5px;
+    border-radius: 5px;
     .avatar {
         object-fit: cover;
         width: 30px;
         height: 30px;
         display: flex;
         align-items: center;
-        border: 1px solid #000;
         border-radius: 50%;
     }
     .username {

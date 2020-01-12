@@ -1,12 +1,10 @@
 import React from 'react';
 import { CustomizedTables } from '../../commons/components/Table/Table';
 import './order.scss';
-export const OrderContainer = () => {
-  const orders = 101;
-  const createData = (name, level, quantity, dateOrder, orderId, total) => {
-    return { name, level, quantity, dateOrder, orderId, total };
-  }
-  
+import { DEFAULT_ORDER } from '../../commons/constants/Order';
+import { createData } from '../../commons/helpers/OrderHelpers';
+
+export const OrderContainer = () => {  
   const rows = [
     createData('Nguyễn Thị Thanh Thúy', 'Lv1', 124, '18.05.2019', '158680083786', '35.000.000'),
     createData('Nguyễn Minh Tường', 'Lv2', 124, '18.05.2019', '158680083786', '90.000.000'),
@@ -50,7 +48,7 @@ export const OrderContainer = () => {
   return (    
       <div>
           <div className='message-order'>
-            You have <span className='text-green'> {orders} </span> orders, waiting for your confirm
+            You have <span className='text-green'> {DEFAULT_ORDER} </span> orders, waiting for your confirm
           </div>
           <CustomizedTables 
             columns={columns}

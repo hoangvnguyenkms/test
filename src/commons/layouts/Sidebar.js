@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Dehaze from '@material-ui/icons/Dehaze';
 import './styles/sidebar.scss';
 
 export const SideBar = props => {
